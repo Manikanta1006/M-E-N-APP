@@ -1,0 +1,19 @@
+html
+  head
+    style.
+  body
+    center
+      h1 User details
+      table(border='2px', cellspacing='0', cellpadding='10px')
+        tbody
+          tr
+            th UserName
+            th CourseName
+            th Delete
+        tbody
+         each info in userdetail
+           tr
+             td=info.username
+             td=info.ncourse
+             td
+               a(href=`/deleteuser/${info.username}`) Delete

@@ -1,0 +1,64 @@
+html
+  head
+    style.
+      #d1{
+      width:60%;
+      height: 28%;
+      margin-top: 5%;
+      margin-left: 26%;
+      display: flex;
+      border-radius: 3%;
+      box-shadow: 2px 2px 2px 2px rgb(51, 49, 49);
+      }
+      #d2{
+      width:200px;
+      height: 120px;
+      border: 1px solid;
+      margin-top:3.5%;
+      margin-left: 25px;
+      }
+      #d3{
+      width: 370px;
+      height: 50px;
+      margin-left: 5%;
+      margin-top:28px;
+      text-align: center;
+      }
+      #d4{
+      width: 150px;
+      height:50px;
+      margin-top:12%;
+      margin-left: -48%;
+      text-align: center;
+      }
+      #d5{
+      width: 160px;
+      height:50px;
+      margin-top:12%;
+      margin-left: 8%;
+      text-align: center;
+      }
+      #d6{
+      border: 1px solid;
+      width: 80px;
+      height: 20px;
+      text-align: center;
+      margin-top:10%;
+      margin-left: 35px;
+      border-radius: 3%;
+      box-shadow: 2px 2px 2px 2px rgb(51, 49, 49);
+      }
+  body
+    form(action='')
+    each info in {courseinfo}
+        each x in info
+          #d1
+            img#d2(src=`${x.image}`, alt='mani')
+            #d3
+              h2= x.coursename
+            #d4
+              h3= x.duration
+            #d5
+              h3= x.fees
+            |  
+            a#d6(href=`/purchase/${x.coursename}`) purchase

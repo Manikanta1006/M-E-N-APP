@@ -1,0 +1,20 @@
+html
+  head
+  body
+    h1 Approve Form 
+    table(border='2px', cellspacing='0', cellpadding='10px')
+      tbody
+        tr
+          th UserName
+          th CourseName
+          th Approve
+          th Delete
+      tbody
+        each info in purchases
+         tr
+            td= info.username
+            td= info.coursename
+            td
+                a(href=`/approve/${info.coursename}/${info.username}`) Approve
+            td
+                a(href=`/approvaldelete/${info.coursename}`) Delete

@@ -1,0 +1,75 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Home page
+    style.
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        height: 40px;
+        padding-top: 20px;
+      }
+      .nv {
+        font-size: 22px;
+      }
+      .info {
+        margin-top: 15%;
+      }
+      .courses {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+      }
+      .sub {
+        box-shadow:5px 5px;
+        box-sizing: border-box;
+        flex-direction: column;
+        width: 20%;
+        border: 2px solid;
+        margin-right: 5px; 
+        margin-top: 15px;
+        padding-left: 24px;
+      }
+      a { 
+        color:red;
+      }
+      .bottom {
+        display: flex;
+        justify-content: center;
+      }
+      img{
+        align:center;
+        margin-top:5px;
+        border-radius:20px
+      }
+  body
+  form(action="/admincdash") 
+    .navbar
+      //- .nv
+      //-   a(href='') Home
+      //- .nv
+      //-   a(href='') Course
+      .nv
+        a(href='/logout') Logout
+
+    .info(style="text-align: center;")
+      img(src='https://edupoly.in/common/assets/edupoly-logo-light.png', alt="", width="330px")
+      br
+      br
+      h3 Best learning platform with top end courses. Taught by experts to help you acquire new skills and lead your career.
+
+    .courses
+      each coursedetails in coursedetail
+        .sub
+          .im
+            img(src=`${coursedetails.image}`, alt="image", width="200px",height="200px")
+          .crsinfo
+            h4 Course Name:: #{coursedetails.coursename}
+            h4 Mentor:: #{coursedetails.mentor}
+            h4 Fees:: #{coursedetails.fees}
+            h4 Duration:: #{coursedetails.duration}
+          .bottom
+            h4
+              a(href=`/delete/${coursedetails.coursename}`) Delete
